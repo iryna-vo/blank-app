@@ -45,11 +45,13 @@ for i, q in enumerate(questions):
     user_answer = st.radio("", q['options'], key=i)
     
     # Check if the selected answer is correct
-    if st.button(f"Submit Answer for Question {i + 1}"):
+       if st.button(f"Valider la réponse pour la question {i + 1}"):
         if user_answer == q['answer']:
-            st.success("✅ Well answer!")
+            st.success("✅ Bonne réponse !")
+            correct_answers += 1  # Increment correct answer count
         else:
-            st.error("❌ Wrong answer!")
+            st.error("❌ Mauvaise réponse !")
 
-# End message
-st.write("**Well done :) Bravo!**")
+# Display final message if at least 2 correct answers
+if correct_answers >= 2:
+    st.write("**Well done :) Bravo!**")
