@@ -1,0 +1,35 @@
+
+  You can find our privacy policy at https://streamlit.io/privacy-policy
+
+  Summary:
+  - This open source library collects usage statistics.
+  - We cannot see and do not store information contained inside Streamlit apps,
+    such as text, charts, images, etc.
+  - Telemetry data is stored in servers in the United States.
+  - If you'd like to opt out, add the following to %userprofile%/.streamlit/config.toml,
+    creating that file if necessary:
+
+    [browser]
+    gatherUsageStats = false
+
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.43.226:8501
+
+Code :
+
+import streamlit as st
+
+st.title("Vérification de mot de passe")
+#password = "mypassWord"
+#saisie = st.text_input("Enter your password :")
+#while saisie != password:
+#    print("Error. Try again")
+#print("Well done!")
+password = st.text_input("Enter your password :", type = "password")
+if password:
+    if password == "mypassWord":
+        st.success("C'est bon !")
+    else: st.error("Mot de passe incorrect. Essayez à nouveau. !")
