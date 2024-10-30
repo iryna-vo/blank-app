@@ -9,5 +9,5 @@ st.title("Vérification de mot de passe")
 password = st.text_input("Enter your password :", type = "password")
 if password:
     if password == "mypassWord":
-        st.success("C'est bon!")
+        st.success("C'est bon !")
     else: st.error("Mot de passe incorrect. Essayez à nouveau. !")
